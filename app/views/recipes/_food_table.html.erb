@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Food</th>
+    <th scope="col">Quantity</th>
+    <th scope="col">Value</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% recipe.ingridients.each do |ingridient| %>
+  <tr>
+    <th scope="row"><%= ingridient.food.name %></th>
+    <td><%= ingridient.quantity %></td>
+    <td><%= ingridient.food.price %></td>
+    <td>
+      <%= ingridient.food.name %>
+      <%= ingridient.food.name %>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

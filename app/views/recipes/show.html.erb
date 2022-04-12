@@ -1,7 +1,7 @@
 <%= render @recipe %>
 <div><%= render 'food_table', :recipe => @recipe %></div>
-<div>
-  <%= link_to "Back to recipes", recipes_path %>
+<div class="d-flex">
+  <%= link_to "Back to recipes", recipes_path, class: 'btn btn-secondary ' %>
 
-  <%= button_to "Delete this recipe", @recipe, method: :delete %>
+  <%= button_to "Delete this recipe", @recipe, method: :delete, class: 'btn btn-danger mx-3' %>
 </div>

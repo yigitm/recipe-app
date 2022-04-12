@@ -20,15 +20,15 @@
   </div>
 
   <div>
-    <%= f.label :quantity %><br>
-    <%= f.number_field :quantity, min: 0 %>
+    <%= f.label :quantity, class: 'form-label' %><br>
+    <%= f.number_field :quantity, min: 0, class: 'form-control' %>
   </div>
 
   <div>
-    <%= f.text_field :recipe_id, :value => @recipe_food.recipe.id %>
+    <%= f.text_field :recipe_id, :value => @recipe_food.recipe.id, class: 'd-none'%>
   </div>
 
   <div>
-    <%= f.submit 'Add'%>
+    <%= f.submit 'Add', class: 'btn btn-success my-4'%>
   </div>
 <% end %>

@@ -26,10 +26,13 @@ class RecipesController < ApplicationController
 
   # PATCH/PUT /recipes/1 or /recipes/1.json
   def update
-    if @recipe.update(recipe_params)
-      redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.'
+    recipe = Recipe.find(params[:id])
+    if recipe.update(recipe_public_params)
+      flash[:notice] = 'Public modified.'
+      redirect_to recipe_path(id: recipe.id)
     else
-      render :edit, status: :unprocessable_entity
+      flash[:error] = recipe.errors.messages
+      render :index
     end
   end
 
@@ -49,5 +52,9 @@ class RecipesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public, :user_id)
+  end
+
+  def recipe_public_params
+    params.require(:recipe).permit(:public)
   end
 end

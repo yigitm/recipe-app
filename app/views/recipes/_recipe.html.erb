@@ -9,10 +9,13 @@
       <%= recipe.preparation_time %>
     </p>
 
-    <div class="form-check form-switch">
-      <label class="form-check-label" for="flexSwitchCheckChecked">Public</label>
-      <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-    </div>
+    <%= form_with model: @recipe, url: "/recipes/#{@recipe.id}", method: :put do |f| %>
+      <div class="form-check custom-control-right form-switch form-switch-sm mx-3">
+        <%= f.label :public, 'Public:', class: "h5 form-check-label", for: "flexSwitchCheckDefault" %>
+        <%= f.check_box :public, class: "form-check-input", id: "flexSwitchCheckDefault", onchange: "this.form.submit();" %>
+      </div>
+    <% end %>
+
   </div>
 
   <p>
@@ -24,5 +27,10 @@
     <strong>Description:</strong>
     <%= recipe.description %>
   </p>
+
+  <div class="d-flex justify-content-between">
+    <%= button_to "Generate Shopping List", class: 'btn btn-danger' %>
+    <%= link_to "Add Ingredient",  new_recipe_food_path(:recipe => recipe.id), class: 'btn btn-primary' %>
+  </div>
 
 </div>

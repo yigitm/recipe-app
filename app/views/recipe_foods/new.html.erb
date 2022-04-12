@@ -1,0 +1,34 @@
+<h1>New food</h1>
+
+<%= form_with(model: @recipe_food) do |f| %>
+  <% if @recipe_food.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+      <ul>
+        <% food.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+      <%= f.label :food_id, 'Food' %><br>
+      <% foods_array = @food.map { |f| [f.name, f.id] } %>
+      <%= f.select(:food_id, options_for_select(foods_array), {}, { :class => 'form-select form-select-lg mb-3' }) %>
+  </div>
+
+  <div>
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity, min: 0 %>
+  </div>
+
+  <div>
+    <%= f.text_field :recipe_id, :value => @recipe_food.recipe.id %>
+  </div>
+
+  <div>
+    <%= f.submit 'Add'%>
+  </div>
+<% end %>

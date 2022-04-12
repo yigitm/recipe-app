@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :recipes, except: :update
+  resources :recipes
   resources :foods
   resources :recipe_foods
   devise_for :users

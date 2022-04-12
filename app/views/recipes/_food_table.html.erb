@@ -13,9 +13,9 @@
     <th scope="row"><%= ingridient.food.name %></th>
     <td><%= ingridient.quantity %></td>
     <td><%= ingridient.food.price %></td>
-    <td>
-      <%= ingridient.food.name %>
-      <%= ingridient.food.name %>
+    <td class="d-flex justify-content-around">
+      <%= link_to "Modify", edit_recipe_food_path(ingridient), class: 'btn btn-primary' %>
+      <%= button_to "Remove", recipe_food_path(ingridient), method: :delete, class: 'btn btn-danger' %>
     </td>
   </tr>
   <% end %>

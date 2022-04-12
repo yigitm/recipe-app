@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get 'shopping', to: 'shopping#index'
   # Defines the root path route ("/")
   # root "articles#index"
+  
   root :to => redirect('/users/sign_in')
 end

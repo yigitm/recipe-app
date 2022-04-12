@@ -1,13 +1,22 @@
-<div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
+<div class="border border-5 p-2 my-3">
+  <p class="text-center fw-bold fs-2" >
     <%= recipe.name %>
   </p>
 
-  <p>
-    <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
+  <div class="d-flex justify-content-between">
+    <p>
+      <strong>Preparation time:</strong>
+      <%= recipe.preparation_time %>
+    </p>
+
+    <%= form_with model: @recipe, url: "/recipes/#{@recipe.id}", method: :put do |f| %>
+      <div class="form-check custom-control-right form-switch form-switch-sm mx-3">
+        <%= f.label :public, 'Public:', class: "h5 form-check-label", for: "flexSwitchCheckDefault" %>
+        <%= f.check_box :public, class: "form-check-input", id: "flexSwitchCheckDefault", onchange: "this.form.submit();" %>
+      </div>
+    <% end %>
+
+  </div>
 
   <p>
     <strong>Cooking time:</strong>
@@ -19,14 +28,9 @@
     <%= recipe.description %>
   </p>
 
-  <p>
-    <strong>Public:</strong>
-    <%= recipe.public %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= recipe.user_id %>
-  </p>
+  <div class="d-flex justify-content-between">
+    <%= button_to "Generate Shopping List", class: 'btn btn-danger' %>
+    <%= link_to "Add Ingredient",  new_recipe_food_path(:recipe => recipe.id), class: 'btn btn-primary' %>
+  </div>
 
 </div>

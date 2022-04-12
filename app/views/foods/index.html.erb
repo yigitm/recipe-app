@@ -1,5 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
+<% if user_signed_in? %>
+
 <%= link_to "New food", new_food_path, class:'btn btn-secondary float-end' %>
 
 <table class="table table-striped">
@@ -25,3 +27,4 @@
   
 </table>
 
+<% end %>

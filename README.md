@@ -1,50 +1,43 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Recipe app
 
-> Description the project.
+> The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+- Ruby
+- Rails
+- Bootstrap
+- Sass
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+You need to have Ruby and Rails in you operating system.
 
+- You need to have postgress with configured credentials in config/database.yml with your credentials
+  > if you don't have Ruby installed in your machine, you can follow [this link](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md) to find instructions for all operating systems.
 
-To get a local copy up and running follow these simple example steps.
+* Fork a copy to your repository and clone it locally: `git@github.com:yigitm/recipe-app.git`
 
-### Prerequisites
+* Move to the main folder of the app `cd path/recipe-app`
 
-### Setup
+* run `rails db:create` to create the database
 
-### Install
+* run `rails db:migrate` to migrate the database (if you want to have some example data you can run `rails db:seed`)
 
-### Usage
+* Now, start the server in your terminal `rails server`
 
-### Run tests
-
-### Deployment
-
-
+* Finally, go to your localhost in any web server
 
 ## Authors
 
-👤 **Author1**
+🧑‍💻 **Diego**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@disc3110](https://github.com/disc3110)
+- LinkedIn: [@diego-solis-277651184](https://www.linkedin.com/in/diego-solis-277651184/)
 
 👤 **Author2**
 

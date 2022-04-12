@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   def after_sign_up_path_for(_resource)
     foods_path # Or :prefix_to_your_route
   end
-  
+
   def update_allowed_parameters
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password, :password_confirmation) }
   end

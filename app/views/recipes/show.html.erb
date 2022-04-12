@@ -2,6 +2,7 @@
 <div><%= render 'food_table', :recipe => @recipe %></div>
 <div class="d-flex">
   <%= link_to "Back to recipes", recipes_path, class: 'btn btn-secondary ' %>
-
+  <% if can? :manage, @recipe %>
   <%= button_to "Delete this recipe", @recipe, method: :delete, class: 'btn btn-danger mx-3' %>
+  <% end %>
 </div>

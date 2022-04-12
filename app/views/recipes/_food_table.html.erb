@@ -4,7 +4,9 @@
     <th scope="col">Food</th>
     <th scope="col">Quantity</th>
     <th scope="col">Value</th>
+    <% if can? :manage, @recipe %>
     <th scope="col">Actions</th>
+    <% end %>
   </tr>
   </thead>
   <tbody>
@@ -13,10 +15,12 @@
     <th scope="row"><%= ingridient.food.name %></th>
     <td><%= ingridient.quantity %></td>
     <td><%= ingridient.food.price * ingridient.quantity %></td>
+    <% if can? :manage, @recipe %>
     <td class="d-flex justify-content-around">
       <%= link_to "Modify", edit_recipe_food_path(ingridient), class: 'btn btn-primary' %>
       <%= button_to "Remove", recipe_food_path(ingridient), method: :delete, class: 'btn btn-danger' %>
     </td>
+    <% end %>
   </tr>
   <% end %>
   </tbody>

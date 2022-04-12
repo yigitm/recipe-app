@@ -6,7 +6,9 @@
         <%= link_to recipe do %>
           <p class="text-center fw-bold fs-2"><%= recipe.name %></p>
         <% end %>
+        <% if can? :manage, recipe %>
         <%= button_to "Delete", recipe, method: :delete, class: 'btn btn-danger' %>
+        <% end %>
       </div>
       <div class="w-75">
         <%= link_to recipe do %>

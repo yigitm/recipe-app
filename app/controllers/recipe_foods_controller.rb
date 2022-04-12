@@ -1,5 +1,6 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[show edit update destroy]
+  before_action :authenticate_user!
   def destroy
     @recipe = @recipe_food.recipe
     @recipe_food.destroy

@@ -4,6 +4,7 @@
 
 > The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
+![App_Gif](/app/assets/images/app.gif)
 
 ## Built With
 
@@ -11,7 +12,6 @@
 - Rails
 - Bootstrap
 - Sass
-
 
 ## Getting Started
 
@@ -39,17 +39,17 @@ You need to have Ruby and Rails in you operating system.
 - GitHub: [@disc3110](https://github.com/disc3110)
 - LinkedIn: [@diego-solis-277651184](https://www.linkedin.com/in/diego-solis-277651184/)
 
-👤 **Author2**
+👤 **Yigit Mersin**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@github](https://github.com/ygtmrsn)
+- LinkedIn: [@linkedIn](linkedin.com/in/yigitmersin)
+- Twitter: [@twitter](https://twitter.com/ygtmrsn)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/yigitm/recipe-app/issues).
 
 ## Show your support
 
@@ -57,9 +57,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
+- Open source
 
 ## 📝 License
 

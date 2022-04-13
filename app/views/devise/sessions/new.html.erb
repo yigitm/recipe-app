@@ -1,15 +1,15 @@
-<h2 class="text-dark text-center">Sign in</h2>
-
+<h2 class="text-dark text-center">Sign in <span class="h6 text-success">- you can use placeholder mail & password to login</span> </h2>
+ 
 <div class="d-flex justify-content-center align-items-center flex-column">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email, class:'text-dark' %><br />
-    <%= f.email_field :email, autofocus: true, class:'text-dark', autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, class:'text-dark', autocomplete: "email", placeholder:"john@mail.com" %>
   </div>
 
   <div class="field">
     <%= f.label :password, class:'text-dark' %><br />
-    <%= f.password_field :password, class:'text-dark', autocomplete: "current-password" %>
+    <%= f.password_field :password, class:'text-dark', autocomplete: "current-password", placeholder:"123456" %>
   </div>
 
   <div class="actions">
@@ -20,5 +20,6 @@
   <%= render "devise/shared/links" %>
 </div>
 </div>
+
 
 

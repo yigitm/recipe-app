@@ -1,0 +1,24 @@
+<h2 class="text-dark text-center">Sign in</h2>
+
+<div class="d-flex justify-content-center align-items-center flex-column">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email, class:'text-dark' %><br />
+    <%= f.email_field :email, autofocus: true, class:'text-dark', autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class:'text-dark' %><br />
+    <%= f.password_field :password, class:'text-dark', autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Log in", class: "btn btn-secondary" %>
+  </div>
+<% end %>
+<div>
+  <%= render "devise/shared/links" %>
+</div>
+</div>
+
+

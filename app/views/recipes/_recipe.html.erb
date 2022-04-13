@@ -1,0 +1,40 @@
+<div class="border border-5 p-2 my-3">
+  <p class="text-center fw-bold fs-2" >
+    <%= recipe.name %>
+  </p>
+
+  <div class="d-flex justify-content-between">
+    <p>
+      <strong>Preparation time:</strong>
+      <%= recipe.preparation_time %>
+    </p>
+
+    <% if can? :manage, @recipe %>
+      <%= form_with model: @recipe, url: "/recipes/#{@recipe.id}", method: :put do |f| %>
+        <div class="form-check custom-control-right form-switch form-switch-sm mx-3">
+          <%= f.label :public, 'Public', class: "h5 form-check-label", for: "flexSwitchCheckDefault" %>
+          <%= f.check_box :public, class: "form-check-input", id: "flexSwitchCheckDefault", onchange: "this.form.submit();" %>
+        </div>
+      <% end %>
+    <% end %>
+
+  </div>
+
+  <p>
+    <strong>Cooking time:</strong>
+    <%= recipe.cooking_time %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= recipe.description %>
+  </p>
+
+  <% if can? :manage, @recipe %>
+  <div class="d-flex justify-content-between">
+    <%= link_to "Generate Shopping List",  shopping_path, class: 'btn btn-success' %>
+    <%= link_to "Add Ingredient",  new_recipe_food_path(:recipe => recipe.id), class: 'btn btn-success' %>
+  </div>
+  <% end %>
+
+</div>

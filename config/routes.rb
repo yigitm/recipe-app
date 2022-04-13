@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'recipes/public', to: 'public#index'
-  resources :recipes
-  resources :foods
-  resources :recipe_foods
+  resources :recipes, only: %i[index show new create update destroy]
+  resources :foods, only: %i[index new create destroy]
+  resources :recipe_foods, only: %i[edit update new create destroy]
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   get 'shopping', to: 'shopping#index'
